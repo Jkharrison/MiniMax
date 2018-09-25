@@ -53,6 +53,7 @@ class Board
         else if(this.board[0][1] == 'O' && this.board[1][1] == 'O' && this.board[2][1] == 'O')
             return true;
         else if(this.board[0][2] == 'O' && this.board[1][2] == 'O' && this.board[2][2] == 'O')
-                return true;
+            return true;
+        return false;
     }
 }
