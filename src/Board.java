@@ -2,8 +2,6 @@ import java.util.Arrays;
 class Board
 {
     public char[][] board = {{'_','_','_'}, {'_', '_', '_'}, {'_', '_', '_'}};
-    // private boolean xHasWon = false;
-    // private boolean oHasWon = false;
     Board()
     {
 
@@ -36,7 +34,6 @@ class Board
         else if(this.board[0][2] == 'X' && this.board[1][2] == 'X' && this.board[2][2] == 'X')
             return true;
         return false;
-        // TODO: Add in the rest of the winning conditions below.
     }
     public boolean oWon()
     {
@@ -57,6 +54,5 @@ class Board
             return true;
         else if(this.board[0][2] == 'O' && this.board[1][2] == 'O' && this.board[2][2] == 'O')
                 return true;
-        // TODO: Add in the rest of the winning conditions below.
     }
 }
