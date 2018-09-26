@@ -29,6 +29,7 @@ public class Game
                             temp = scan.nextLine();
                             y = scan.nextByte();
                             temp = scan.nextLine();
+                            // TODO: Switch conditional below to while loop for error checking.
                             if(boardGame.board[y][x] == '_')
                                 boardGame.board[y][x] = 'X'; // Row, Col format which is y, x in cartesian.
                             else
@@ -51,6 +52,7 @@ public class Game
                             temp = scan.nextLine();
                             y = scan.nextByte();
                             temp = scan.nextLine();
+                            // TODO: Switch conditional to while loop for error checking.
                             if(boardGame.board[y][x] == '_')
                                 boardGame.board[y][x] = 'O'; // Row, Col format which is y, x in cartesian.
                             else
