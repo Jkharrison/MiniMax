@@ -28,7 +28,7 @@ public class Game
                 while(true)
                 {
                     byte x, y;
-                    if(!(boardGame.xWon()) && !(boardGame.oWon()))
+                    if(!(boardGame.xWon()) && !(boardGame.oWon()) && !(boardGame.draw()))
                     {
                         if(i % 2 == 0)
                         {
