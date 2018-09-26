@@ -14,6 +14,25 @@ class Board
     {
         this.board = that;
     }
+    public boolean draw()
+    {
+        for(int i = 0; i < 3; i++)
+        {
+            for(int j = 0; j < 3; j++)
+            {
+                if(this.board[i][j] == '_')
+                    return false;
+            }
+        }
+        if(!(this.xWon()) && !(this.oWon()))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     void makeMove(int x, int y, char c)
     {
         // Checking if move is valid;

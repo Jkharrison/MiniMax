@@ -4,6 +4,10 @@ public class Game
 {
     public static int miniMax(Board board, char Player)
     {
+        // Start with calculating possible (valid) moves for each player a given moment.
+        // Next Minimize maximum loss for the AI Agent, while calculating the player's best move.
+        // Recursively call this method and figure out which move is the best bet for the user to take at a givent moment.
+        // Keep calling this methid until a victory or draw is reached.
         return -1; // PlaceHolder for now.
     }
     public static void main(String[] args)
@@ -85,6 +89,12 @@ public class Game
                         else if(boardGame.oWon())
                         {
                             System.out.println("Player two has one the game, now exiting");
+                            scan.close();
+                            System.exit(0);
+                        }
+                        else if(boardGame.draw())
+                        {
+                            System.out.println("The game is a draw");
                             scan.close();
                             System.exit(0);
                         }
