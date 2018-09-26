@@ -2,6 +2,10 @@ import java.util.Scanner;
 import java.util.Random;
 public class Game
 {
+    public static int miniMax(Board board, char Player)
+    {
+        return -1; // PlaceHolder for now.
+    }
     public static void main(String[] args)
     {
         Scanner scan = new Scanner(System.in);
