@@ -29,7 +29,10 @@ public class Game
                             temp = scan.nextLine();
                             y = scan.nextByte();
                             temp = scan.nextLine();
-                            boardGame.board[y][x] = 'X'; // Row, Col format which is y, x in cartesian.
+                            if(boardGame.board[y][x] == '_')
+                                boardGame.board[y][x] = 'X'; // Row, Col format which is y, x in cartesian.
+                            else
+                                throw new RuntimeException("Unable to move there because spot has been played already");
                             System.out.println("Board Status");
                             for(int j = 0; j < 3; j++)
                             {
@@ -48,7 +51,10 @@ public class Game
                             temp = scan.nextLine();
                             y = scan.nextByte();
                             temp = scan.nextLine();
-                            boardGame.board[y][x] = 'O';
+                            if(boardGame.board[y][x] == '_')
+                                boardGame.board[y][x] = 'O'; // Row, Col format which is y, x in cartesian.
+                            else
+                                throw new RuntimeException("Unable to move there because spot has been played already");
                             System.out.println("Board Status");
                             for(int j = 0; j < 3; j++)
                             {
