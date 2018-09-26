@@ -14,6 +14,14 @@ class Board
     {
         this.board = that;
     }
+    void makeMove(int x, int y, char c)
+    {
+        // Checking if move is valid;
+        if(this.board[y][x] == '_')
+            this.board[y][x] = c;
+        else
+            System.out.println("Unable to make move, piece already located in that position");
+    }
     public boolean xWon()
     {
         char[] rowOfX = {'X', 'X', 'X'};
