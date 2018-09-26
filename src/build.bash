@@ -2,4 +2,4 @@
 set -e -x
 echo building...
 javac *.java
-echo run java Main
+echo run java Game
