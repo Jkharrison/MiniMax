@@ -16,7 +16,7 @@ public class Game
             return 0; // Draw case
         if(isMax)
         {
-            int best = -1000;
+            int best = Integer.MIN_VALUE;
 
             for(int i = 0; i < 3; i++)
             {
@@ -35,7 +35,7 @@ public class Game
         }
         else
         {
-            int best = 1000;
+            int best = Integer.MAX_VALUE;
             for(int i = 0; i < 3; i++)
             {
                 for(int j = 0; j < 3; j++)
@@ -144,6 +144,15 @@ public class Game
 
         byte firstChoice = scan.nextByte();
         temp = scan.nextLine();
+        for(int i = 0; i < 3; i++)
+        {
+            for(int j = 0; j < 3; j++)
+            {
+                System.out.print((char)boardGame.board[i][j]);
+                System.out.print(' ');
+            }
+            System.out.println();
+        }
         switch(firstChoice)
         {
             case 1:
@@ -155,10 +164,10 @@ public class Game
                     {
                         if(i % 2 == 0)
                         {
-                            System.out.println("Player one, please enter move (x,y) coordinate, separate number by new line");
-                            x = scan.nextByte();
-                            temp = scan.nextLine();
+                            System.out.println("Player one, please enter move (row,col) coordinate, separate number by new line");
                             y = scan.nextByte();
+                            temp = scan.nextLine();
+                            x = scan.nextByte();
                             temp = scan.nextLine();
                             // TODO: Switch conditional below to while loop for error checking.
                             if(boardGame.board[y][x] == '_')

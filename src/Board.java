@@ -14,7 +14,7 @@ class Board
     {
         this.board = that;
     }
-    public boolean draw()
+    public boolean draw() // This method checks for tie game, not drawing the board.
     {
         for(int i = 0; i < 3; i++)
         {
