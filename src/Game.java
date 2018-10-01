@@ -97,40 +97,44 @@ public class Game
     }
     public static int evaluate(Board b)
     {
-        for(int row = 0; row < 3; row++)
-        {
-            if(b.board[row][0] == b.board[row][1] && b.board[row][1] == b.board[row][2])
-            {
-                if(b.board[row][0] == player)
-                    return 10;
-                else if(b.board[row][0] == opponent)
-                    return -10;
-            }
-        }
-        for(int col = 0; col < 3; col++)
-        {
-            if(b.board[0][col] == b.board[1][col] && b.board[1][col] == b.board[col][2])
-            {
-                if(b.board[0][col] == player)
-                    return 10;
-                else if(b.board[0][col] == opponent)
-                    return -10;
-            }
-        }
-        if(b.board[0][0] == b.board[1][1] && b.board[1][1] == b.board[2][2])
-        {
-            if(b.board[0][0] == player)
-                return 10;
-            else if(b.board[0][0] == opponent)
-                return -10;
-        }
-        if(b.board[2][0] == b.board[1][1] && b.board[1][1] == b.board[0][2])
-        {
-            if(b.board[2][0] == player)
-                return 10;
-            else if(b.board[2][0] == opponent)
-                return -10;
-        }
+        if(b.oWon())
+            return 10;
+        else if(b.xWon())
+            return -10;
+        // for(int row = 0; row < 3; row++)
+        // {
+        //     if(b.board[row][0] == b.board[row][1] && b.board[row][1] == b.board[row][2])
+        //     {
+        //         if(b.board[row][0] == player)
+        //             return 10;
+        //         else if(b.board[row][0] == opponent)
+        //             return -10;
+        //     }
+        // }
+        // for(int col = 0; col < 3; col++)
+        // {
+        //     if(b.board[0][col] == b.board[1][col] && b.board[1][col] == b.board[col][2])
+        //     {
+        //         if(b.board[0][col] == player)
+        //             return 10;
+        //         else if(b.board[0][col] == opponent)
+        //             return -10;
+        //     }
+        // }
+        // if(b.board[0][0] == b.board[1][1] && b.board[1][1] == b.board[2][2])
+        // {
+        //     if(b.board[0][0] == player)
+        //         return 10;
+        //     else if(b.board[0][0] == opponent)
+        //         return -10;
+        // }
+        // if(b.board[2][0] == b.board[1][1] && b.board[1][1] == b.board[0][2])
+        // {
+        //     if(b.board[2][0] == player)
+        //         return 10;
+        //     else if(b.board[2][0] == opponent)
+        //         return -10;
+        // }
         return 0;
     }
     public static void main(String[] args)
