@@ -225,7 +225,7 @@ public class Game
                         }
                         else if(boardGame.oWon())
                         {
-                            System.out.println("Player two has one the game, now exiting");
+                            System.out.println("MiniMax AI has one the game, now exiting");
                             scan.close();
                             System.exit(0);
                         }
