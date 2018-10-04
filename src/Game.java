@@ -17,7 +17,6 @@ public class Game
         if(isMax)
         {
             int best = Integer.MIN_VALUE;
-
             for(int i = 0; i < 3; i++)
             {
                 for(int j = 0; j < 3; j++)
@@ -51,10 +50,6 @@ public class Game
             }
             return best;
         }
-        // Start with calculating possible (valid) moves for each player a given moment.
-        // Next Minimize maximum loss for the AI Agent, while calculating the player's best move.
-        // Recursively call this method and figure out which move is the best bet for the user to take at a givent moment.
-        // Keep calling this methid until a victory or draw is reached.
     }
     public static int[] findBestMove(Board board)
     {
@@ -62,7 +57,6 @@ public class Game
         int[] bestMove = new int[2];
         bestMove[0] = -1;
         bestMove[1] = -1;
-
         for(int i = 0; i < 3; i++)
         {
             for(int j = 0; j < 3; j++)
@@ -101,40 +95,6 @@ public class Game
             return 10;
         else if(b.xWon())
             return -10;
-        // for(int row = 0; row < 3; row++)
-        // {
-        //     if(b.board[row][0] == b.board[row][1] && b.board[row][1] == b.board[row][2])
-        //     {
-        //         if(b.board[row][0] == player)
-        //             return 10;
-        //         else if(b.board[row][0] == opponent)
-        //             return -10;
-        //     }
-        // }
-        // for(int col = 0; col < 3; col++)
-        // {
-        //     if(b.board[0][col] == b.board[1][col] && b.board[1][col] == b.board[col][2])
-        //     {
-        //         if(b.board[0][col] == player)
-        //             return 10;
-        //         else if(b.board[0][col] == opponent)
-        //             return -10;
-        //     }
-        // }
-        // if(b.board[0][0] == b.board[1][1] && b.board[1][1] == b.board[2][2])
-        // {
-        //     if(b.board[0][0] == player)
-        //         return 10;
-        //     else if(b.board[0][0] == opponent)
-        //         return -10;
-        // }
-        // if(b.board[2][0] == b.board[1][1] && b.board[1][1] == b.board[0][2])
-        // {
-        //     if(b.board[2][0] == player)
-        //         return 10;
-        //     else if(b.board[2][0] == opponent)
-        //         return -10;
-        // }
         return 0;
     }
     public static void main(String[] args)
@@ -194,10 +154,7 @@ public class Game
                             System.out.println("Player two, please enter move (x, y) coordinate, separte number by new line");
                             int[] result = findBestMove(boardGame);
                             x = (byte)result[1];
-                            // temp = scan.nextLine();
                             y = (byte)result[0];
-                            // temp = scan.nextLine();
-                            // TODO: Switch conditional to while loop for error checking.
                             if(boardGame.board[y][x] == '_')
                                 boardGame.board[y][x] = 'O'; // Row, Col format which is y, x in cartesian.
                             else
